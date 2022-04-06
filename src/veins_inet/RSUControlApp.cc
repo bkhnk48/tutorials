@@ -56,6 +56,7 @@ void RSUControlApp::onWSM(BaseFrame1609_4* wsm)
     // code for handling the message goes here, see TraciDemo11p.cc for examples
     cPacket* enc = wsm->getEncapsulatedPacket();
     if(TraCIDemo11pMessage* bc = dynamic_cast<TraCIDemo11pMessage*>(enc)){
+        //Check content of message from car
         if(strcmp(Constant::FIRST, bc->getDemoData()) == 0){
             EV << "my message = " <<bc->getDemoData()<<" from "<<bc->getSenderAddress()<<endl;
             if(sendBeacon != NULL){
