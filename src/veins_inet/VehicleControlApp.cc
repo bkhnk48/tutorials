@@ -88,6 +88,7 @@ void VehicleControlApp::handleSelfMsg(cMessage* msg)
     //if(msg == sendBeacon)
     {
         TraCIDemo11pMessage* carBeacon = new TraCIDemo11pMessage();
+        //generate content of message
         carBeacon->setDemoData(Constant::FIRST);
         carBeacon->setSenderAddress(myId);
         BaseFrame1609_4* WSM = new BaseFrame1609_4();
@@ -109,15 +110,18 @@ void VehicleControlApp::handlePositionUpdate(cObject* obj)
 void VehicleControlApp::handleLowerMsg(cMessage* msg)
 {
     BaseFrame1609_4* WSM = check_and_cast<BaseFrame1609_4*>(msg);
+    //extract the message
     cPacket* enc = WSM->getEncapsulatedPacket();
+    
     if(TraCIDemo11pMessage* bc = dynamic_cast<TraCIDemo11pMessage*>(enc)){
+        //generate the expected message
         char *cstr = new char[Constant::LENGTH_RSU_IDENTIFY + 1];
         strcpy(cstr, Constant::RSU_IDENTIFY);
         std::string str = std::to_string(myId);
         char *new_str = new char[str.length() + 1];
         strcpy(new_str, str.c_str());
         char *ret = strcat(cstr, new_str);
-
+        //compare the expected message to the message from RSU
         if(strcmp(ret, bc->getDemoData()) == 0){
             if(traciVehicle->getSpeed() <= 5){
                 EV<<"My new speed: 20"<<endl;
