@@ -65,12 +65,15 @@ void RSUControlApp::onWSM(BaseFrame1609_4* wsm)
                 }
 
                 TraCIDemo11pMessage* rsuBeacon = new TraCIDemo11pMessage();
+                
+                //create content of message
                 char *cstr = new char[Constant::LENGTH_RSU_IDENTIFY + 1];
                 strcpy(cstr, Constant::RSU_IDENTIFY);
                 std::string str = std::to_string(bc->getSenderAddress());
                 char *new_str = new char[str.length() + 1];
                 strcpy(new_str, str.c_str());
                 char *ret = strcat(cstr, new_str);
+                
                 rsuBeacon->setDemoData(ret);
                 rsuBeacon->setSenderAddress(myId);
                 BaseFrame1609_4* WSM = new BaseFrame1609_4();
