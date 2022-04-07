@@ -115,12 +115,7 @@ void VehicleControlApp::handleLowerMsg(cMessage* msg)
     
     if(TraCIDemo11pMessage* bc = dynamic_cast<TraCIDemo11pMessage*>(enc)){
         //generate the expected message
-        char *cstr = new char[Constant::LENGTH_RSU_IDENTIFY + 1];
-        strcpy(cstr, Constant::RSU_IDENTIFY);
-        std::string str = std::to_string(myId);
-        char *new_str = new char[str.length() + 1];
-        strcpy(new_str, str.c_str());
-        char *ret = strcat(cstr, new_str);
+        char *ret = mergeContent(myId);
         //compare the expected message to the message from RSU
         if(strcmp(ret, bc->getDemoData()) == 0){
             if(traciVehicle->getSpeed() <= 5){
