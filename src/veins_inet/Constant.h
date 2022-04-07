@@ -20,7 +20,6 @@ class Constant {
 public:
     static constexpr const char* FIRST = "First vehicle";
     static constexpr const char* RSU_IDENTIFY = "RSU";
-    static constexpr int LENGTH_RSU_IDENTIFY = 3;
     Constant();
     virtual ~Constant();
 };
