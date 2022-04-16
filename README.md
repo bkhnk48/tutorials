@@ -1,5 +1,5 @@
 # VANET Tutorials
-This repository will hold the code used in my VANET YouTube Series (OMNET++, INET, Veins, and SUMO)
+This repository will hold the code used in my VANET YouTube Series (OMNET++, INET, Veins, and SUMO). Copyright: https://github.com/chaotictoejam/VANETTutorials
 
 ## What you need
 

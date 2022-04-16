@@ -15,9 +15,6 @@
 
 #include "RSUControlApp.h"
 #include "Constant.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
 
@@ -56,6 +53,7 @@ void RSUControlApp::onWSM(BaseFrame1609_4* wsm)
     // code for handling the message goes here, see TraciDemo11p.cc for examples
     cPacket* enc = wsm->getEncapsulatedPacket();
     if(TraCIDemo11pMessage* bc = dynamic_cast<TraCIDemo11pMessage*>(enc)){
+        //Check content of message from car
         if(strcmp(Constant::FIRST, bc->getDemoData()) == 0){
             EV << "my message = " <<bc->getDemoData()<<" from "<<bc->getSenderAddress()<<endl;
             if(sendBeacon != NULL){
@@ -65,12 +63,10 @@ void RSUControlApp::onWSM(BaseFrame1609_4* wsm)
                 }
 
                 TraCIDemo11pMessage* rsuBeacon = new TraCIDemo11pMessage();
-                char *cstr = new char[Constant::LENGTH_RSU_IDENTIFY + 1];
-                strcpy(cstr, Constant::RSU_IDENTIFY);
-                std::string str = std::to_string(bc->getSenderAddress());
-                char *new_str = new char[str.length() + 1];
-                strcpy(new_str, str.c_str());
-                char *ret = strcat(cstr, new_str);
+                
+                //create content of message
+                char *ret = mergeContent(bc->getSenderAddress());
+                
                 rsuBeacon->setDemoData(ret);
                 rsuBeacon->setSenderAddress(myId);
                 BaseFrame1609_4* WSM = new BaseFrame1609_4();
