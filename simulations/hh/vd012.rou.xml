@@ -1,11 +1,44 @@
 <!-- vehicle flow definition -->
 <routes>
-	<vType id="car" type="passenger" length="4" accel="10" decel="10" sigma="0.5"/>
+	<vType id="agv" type="e-scooter" length="1.1" width="0.4" accel="10" decel="10" sigma="0"/>
 	<route id="route_0" edges="E0 E1 E2 E3 E4 E5 E6 E7 E23 E24 E25 E26 E27 E28 E29 E30 E31 E32 E33 E34 E35 E36 E37 E38 E39 E40 E41 E42 E43 E44 E45 E46 E47 E48 E49 E50 E51 E52 E53 E54 E55 E56 E57 E58 E59 E60 E61 E62 E63 E64 E65 E66 E67 E68 E69 E70 E71 E76 E77 E78 E79 E80 E81 E82 E83 E84 E85 E86 E90 E91 E92"/>
-	<flow id="flow0" type="car" route="route_0" begin="0" period="3" minGap="1.00" maxSpeed="10.00" number="1115"/>
-    <personFlow id="p1" begin="0" period="1" impatience="1">
+	<flow id="flow0" type="agv" route="route_0" begin="0" period="3" minGap="1.00" maxSpeed="4.00" number="1115"/>
+    <personFlow id="p1a" begin="0" period="3" impatience="0.1">
+       <walk from="E1" to="-E1"/>
+    </personFlow>
+    <personFlow id="p1b" begin="0" period="2" impatience="0.9">
+       <walk from="-E1" to="E1"/>
+    </personFlow>
+
+    <personFlow id="p2a" begin="0" period="3" impatience="0.2">
+       <walk from="E2" to="-E2"/>
+    </personFlow>
+    <personFlow id="p2b" begin="0" period="2" impatience="0.8">
+       <walk from="-E2" to="E2"/>
+    </personFlow>
+
+    <personFlow id="p8a" begin="0" period="3" impatience="0.8">
+       <walk from="E8" to="-E8"/>
+    </personFlow>
+    <personFlow id="p8b" begin="0" period="3" impatience="0.2">
+       <walk from="-E8" to="E8"/>
+    </personFlow>
+    <personFlow id="p9a" begin="1" period="3" impatience="0.9">
+       <walk from="-E9" to="E9"/>
+    </personFlow>
+    <personFlow id="p9b" begin="1" period="3" impatience="0.1">
+       <walk from="E9" to="-E9"/>
+    </personFlow>
+    <personFlow id="p91a" begin="2" period="3" impatience="0">
+       <walk from="E91" to="-E91"/>
+    </personFlow>
+    <personFlow id="p91b" begin="2" period="3" impatience="1">
+       <walk from="-E91" to="E91"/>
+    </personFlow>
+    <personFlow id="p92" begin="2" period="3" impatience="1">
        <walk from="E92" to="-E92"/>
-   </personFlow>
+    </personFlow>
+    
     <!--vType id="PedCar" length="1.00" minGap="1.00" maxSpeed="10.00" vClass="motorcycle" color="255,0,228" accel="1" decel="1"/-->
     <!--flow id="flow0" type="PedCar" route="route_0" begin="0" end="3600.00" probability="0.06"/-->
 	

@@ -7,7 +7,7 @@
 
     <input>
         <net-file value="vd012.net.xml"/>
-        <route-files value="vd012.rou.xml, pedestrians.trip.xml"/>
+        <route-files value="vd012.rou.xml"/><!--, pedestrians.trip.xml"/-->
     </input>
 
     <processing>
