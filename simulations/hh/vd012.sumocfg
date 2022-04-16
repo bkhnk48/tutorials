@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thứ sáu, 04 Tháng 3 Năm 2022 14:08:49 CET by Eclipse SUMO GUI Version 1.8.0
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="vd012.net.xml"/>
+        <route-files value="vd012.rou.xml, pedestrians.trip.xml"/>
+    </input>
+
+    <processing>
+        <time-to-teleport value="-1"/>
+		<lanechange.duration value="2"/>
+    </processing>
+	
+	<time>
+        <begin value="0"/>
+        <end value="36000"/>
+    </time>
+	
+	<step-length value="0.01" /> 
+
+    <!--report>
+        <xml-validation value="never"/>
+        <duration-log.disable value="true"/>
+        <no-step-log value="true"/>
+    </report-->
+
+</configuration>

@@ -1,0 +1,34 @@
+<!-- vehicle flow definition -->
+<routes>
+	<vType id="car" type="passenger" length="4" accel="10" decel="10" sigma="0.5"/>
+	<route id="route_0" edges="E0 E1 E2 E3 E4 E5 E6 E7 E23 E24 E25 E26 E27 E28 E29 E30 E31 E32 E33 E34 E35 E36 E37 E38 E39 E40 E41 E42 E43 E44 E45 E46 E47 E48 E49 E50 E51 E52 E53 E54 E55 E56 E57 E58 E59 E60 E61 E62 E63 E64 E65 E66 E67 E68 E69 E70 E71 E76 E77 E78 E79 E80 E81 E82 E83 E84 E85 E86 E90 E91 E92"/>
+	<flow id="flow0" type="car" route="route_0" begin="0" period="3" minGap="1.00" maxSpeed="10.00" number="1115"/>
+    <personFlow id="p1" begin="0" period="1" impatience="1">
+       <walk from="E92" to="-E92"/>
+   </personFlow>
+    <!--vType id="PedCar" length="1.00" minGap="1.00" maxSpeed="10.00" vClass="motorcycle" color="255,0,228" accel="1" decel="1"/-->
+    <!--flow id="flow0" type="PedCar" route="route_0" begin="0" end="3600.00" probability="0.06"/-->
+	
+	<!--vehicle id="carA" depart="0.00" length="5" width="2" accel="3" decel="5" departLane="free" color="orange">
+        <route id="route_0" edges="gneE18 gneE25 gneE26 gneE27 gneE28 -gneE38 -gneE35 -gneE34 -gneE33 -gneE32"/>
+		<flow id="flow0" type="car" route="route_0" begin="0" period="3" number="195"/>
+    </vehicle-->
+	
+	<!--vehicle id="carB" depart="0.00" length="3.5" width="1.9" accel="4" decel="5" departLane="free" color="yellow">
+        <route edges="U3 U4 U6 U1"/>
+    </vehicle>
+	<vehicle id="carC" depart="0.00" length="4" width="1.8" accel="3.5" decel="1" departLane="free" color="90,60,90">
+        <route edges="U4 U6 U1 U3"/>
+    </vehicle>
+	<vehicle id="carD" depart="0.00" length="4.5" width="1.75" accel="3.2" decel="3" departLane="free" color="red">
+        <route edges="U6 U1 U3 U4"/>
+    </vehicle>
+	<vehicle id="carE" depart="0.00" length="2" width="1.5" accel="5" decel="6" departLane="free" color="blue">
+        <route edges="U1 U3 U4 U6"/>
+    </vehicle-->
+	
+</routes>
+
+
+
+
