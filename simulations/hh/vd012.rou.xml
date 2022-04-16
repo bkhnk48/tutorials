@@ -24,6 +24,13 @@
        <walk from="-E3" to="E3"/>
     </personFlow>
 
+    <personFlow id="p4a" begin="0" period="2" impatience="0.4">
+       <walk from="E4" to="-E4"/>
+    </personFlow>
+    <personFlow id="p4b" begin="0" period="4" impatience="0.6">
+       <walk from="-E4" to="E4"/>
+    </personFlow>
+
     <personFlow id="p8a" begin="0" period="3" impatience="0.8">
        <walk from="E8" to="-E8"/>
     </personFlow>
