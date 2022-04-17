@@ -2,451 +2,451 @@
 <routes>
 	<vType id="agv" type="e-scooter" length="1.1" width="0.4" accel="10" decel="10" sigma="0"/>
 	<route id="route_0" edges="E0 E1 E2 E3 E4 E5 E6 E7 E23 E24 E25 E26 E27 E28 E29 E30 E31 E32 E33 E34 E35 E36 E37 E38 E39 E40 E41 E42 E43 E44 E45 E46 E47 E48 E49 E50 E51 E52 E53 E54 E55 E56 E57 E58 E59 E60 E61 E62 E63 E64 E65 E66 E67 E68 E69 E70 E71 E76 E77 E78 E79 E80 E81 E82 E83 E84 E85 E86 E90 E91 E92"/>
-	<flow id="flow0" type="agv" route="route_0" begin="0" period="3" minGap="1.00" maxSpeed="4.00" number="1115"/>
-    <personFlow id="p1a" begin="0" period="3" impatience="0.1">
+	<flow id="flow0" type="agv" route="route_0" begin="0" period="6" minGap="1.00" maxSpeed="4.00" number="1115"/>
+    <personFlow id="p1a" begin="0" period="6" impatience="0.1">
        <walk from="E1" to="-E1"/>
     </personFlow>
-    <personFlow id="p1b" begin="0" period="2" impatience="0.9">
+    <personFlow id="p1b" begin="0" period="5" impatience="0.9">
        <walk from="-E1" to="E1"/>
     </personFlow>
 
-    <personFlow id="p2a" begin="0" period="3" impatience="0.2">
+    <personFlow id="p2a" begin="0" period="6" impatience="0.2">
        <walk from="E2" to="-E2"/>
     </personFlow>
-    <personFlow id="p2b" begin="0" period="2" impatience="0.8">
+    <personFlow id="p2b" begin="0" period="5" impatience="0.8">
        <walk from="-E2" to="E2"/>
     </personFlow>
 
-    <personFlow id="p3a" begin="0" period="3" impatience="0.3">
+    <personFlow id="p3a" begin="0" period="6" impatience="0.3">
        <walk from="E3" to="-E3"/>
     </personFlow>
-    <personFlow id="p3b" begin="0" period="2" impatience="0.7">
+    <personFlow id="p3b" begin="0" period="5" impatience="0.7">
        <walk from="-E3" to="E3"/>
     </personFlow>
 
-    <personFlow id="p4a" begin="0" period="2" impatience="0.4">
+    <personFlow id="p4a" begin="0" period="5" impatience="0.4">
        <walk from="E4" to="-E4"/>
     </personFlow>
     <personFlow id="p4b" begin="0" period="4" impatience="0.6">
        <walk from="-E4" to="E4"/>
     </personFlow>
 
-    <personFlow id="p5a" begin="0" period="3" impatience="0.5">
+    <personFlow id="p5a" begin="0" period="6" impatience="0.5">
        <walk from="E5" to="-E5"/>
     </personFlow>
-    <personFlow id="p5b" begin="0" period="3" impatience="0.5">
+    <personFlow id="p5b" begin="0" period="6" impatience="0.5">
        <walk from="-E5" to="E5"/>
     </personFlow>
 
-    <personFlow id="p6a" begin="0" period="3" impatience="0.6">
+    <personFlow id="p6a" begin="0" period="6" impatience="0.6">
        <walk from="E6" to="-E6"/>
     </personFlow>
-    <personFlow id="p6b" begin="0" period="3" impatience="0.4">
+    <personFlow id="p6b" begin="0" period="6" impatience="0.4">
        <walk from="-E6" to="E6"/>
     </personFlow>
 
-    <personFlow id="p7a" begin="0" period="3" impatience="0.7">
+    <personFlow id="p7a" begin="0" period="6" impatience="0.7">
        <walk from="E7" to="-E7"/>
     </personFlow>
-    <personFlow id="p7b" begin="0" period="3" impatience="0.3">
+    <personFlow id="p7b" begin="0" period="6" impatience="0.3">
        <walk from="-E7" to="E7"/>
     </personFlow>
 
-    <personFlow id="p8a" begin="0" period="3" impatience="0.8">
+    <personFlow id="p8a" begin="0" period="6" impatience="0.8">
        <walk from="E8" to="-E8"/>
     </personFlow>
-    <personFlow id="p8b" begin="0" period="3" impatience="0.2">
+    <personFlow id="p8b" begin="0" period="6" impatience="0.2">
        <walk from="-E8" to="E8"/>
     </personFlow>
-    <personFlow id="p9a" begin="1" period="3" impatience="0.9">
+    <personFlow id="p9a" begin="1" period="6" impatience="0.9">
        <walk from="-E9" to="E9"/>
     </personFlow>
-    <personFlow id="p9b" begin="1" period="3" impatience="0.1">
+    <personFlow id="p9b" begin="1" period="6" impatience="0.1">
        <walk from="E9" to="-E9"/>
     </personFlow>
 
-    <personFlow id="p10a" begin="1" period="3" impatience="0.1">
+    <personFlow id="p10a" begin="1" period="6" impatience="0.1">
        <walk from="E10" to="-E10"/>
     </personFlow>
-    <personFlow id="p10b" begin="1" period="3" impatience="0.9">
+    <personFlow id="p10b" begin="1" period="6" impatience="0.9">
        <walk from="-E10" to="E10"/>
     </personFlow>
 
-   <personFlow id="p11a" begin="1" period="3" impatience="0.11">
+   <personFlow id="p11a" begin="1" period="6" impatience="0.11">
       <walk from="E11" to="-E11"/>
     </personFlow>
-    <personFlow id="p11b" begin="1" period="3" impatience="0.89">
+    <personFlow id="p11b" begin="1" period="6" impatience="0.89">
       <walk from="-E11" to="E11"/>
     </personFlow>
 
-    <personFlow id="p91a" begin="1" period="3" impatience="0">
+    <personFlow id="p91a" begin="1" period="6" impatience="0">
        <walk from="E91" to="-E91"/>
     </personFlow>
-    <personFlow id="p91b" begin="1" period="3" impatience="1">
+    <personFlow id="p91b" begin="1" period="6" impatience="1">
        <walk from="-E91" to="E91"/>
     </personFlow>
-    <personFlow id="p92" begin="1" period="3" impatience="1">
+    <personFlow id="p92" begin="1" period="6" impatience="1">
        <walk from="E92" to="-E92"/>
     </personFlow>
 
-    <personFlow id="p12a" begin="1" period="3" impatience="0.12">
+    <personFlow id="p12a" begin="1" period="6" impatience="0.12">
          <walk from="E12" to="-E12"/>
       </personFlow>
-      <personFlow id="p12b" begin="1" period="3" impatience="0.88">
+      <personFlow id="p12b" begin="1" period="6" impatience="0.88">
          <walk from="-E12" to="E12"/>
       </personFlow>
-      <personFlow id="p13a" begin="1" period="3" impatience="0.13">
+      <personFlow id="p13a" begin="1" period="6" impatience="0.13">
          <walk from="E13" to="-E13"/>
       </personFlow>
-      <personFlow id="p13b" begin="1" period="3" impatience="0.87">
+      <personFlow id="p13b" begin="1" period="6" impatience="0.87">
          <walk from="-E13" to="E13"/>
       </personFlow>
-      <personFlow id="p14a" begin="1" period="3" impatience="0.14">
+      <personFlow id="p14a" begin="1" period="6" impatience="0.14">
          <walk from="E14" to="-E14"/>
       </personFlow>
-      <personFlow id="p14b" begin="1" period="3" impatience="0.86">
+      <personFlow id="p14b" begin="1" period="6" impatience="0.86">
          <walk from="-E14" to="E14"/>
       </personFlow>
-      <personFlow id="p15a" begin="1" period="3" impatience="0.15">
+      <personFlow id="p15a" begin="1" period="6" impatience="0.15">
          <walk from="E15" to="-E15"/>
       </personFlow>
-      <personFlow id="p15b" begin="1" period="3" impatience="0.85">
+      <personFlow id="p15b" begin="1" period="6" impatience="0.85">
          <walk from="-E15" to="E15"/>
       </personFlow>
-      <personFlow id="p16a" begin="1" period="3" impatience="0.16">
+      <personFlow id="p16a" begin="1" period="6" impatience="0.16">
          <walk from="E16" to="-E16"/>
       </personFlow>
-      <personFlow id="p16b" begin="1" period="3" impatience="0.84">
+      <personFlow id="p16b" begin="1" period="6" impatience="0.84">
          <walk from="-E16" to="E16"/>
       </personFlow>
-      <personFlow id="p17a" begin="1" period="3" impatience="0.17">
+      <personFlow id="p17a" begin="1" period="6" impatience="0.17">
          <walk from="E17" to="-E17"/>
       </personFlow>
-      <personFlow id="p17b" begin="1" period="3" impatience="0.83">
+      <personFlow id="p17b" begin="1" period="6" impatience="0.83">
          <walk from="-E17" to="E17"/>
       </personFlow>
-      <personFlow id="p18a" begin="1" period="3" impatience="0.18">
+      <personFlow id="p18a" begin="1" period="6" impatience="0.18">
          <walk from="E18" to="-E18"/>
       </personFlow>
-      <personFlow id="p18b" begin="1" period="3" impatience="0.82">
+      <personFlow id="p18b" begin="1" period="6" impatience="0.82">
          <walk from="-E18" to="E18"/>
       </personFlow>
-      <personFlow id="p19a" begin="1" period="3" impatience="0.19">
+      <personFlow id="p19a" begin="1" period="6" impatience="0.19">
          <walk from="E19" to="-E19"/>
       </personFlow>
-      <personFlow id="p19b" begin="1" period="3" impatience="0.81">
+      <personFlow id="p19b" begin="1" period="6" impatience="0.81">
          <walk from="-E19" to="E19"/>
       </personFlow>
-      <personFlow id="p20a" begin="1" period="3" impatience="0.2">
+      <personFlow id="p20a" begin="1" period="6" impatience="0.2">
          <walk from="E20" to="-E20"/>
       </personFlow>
-      <personFlow id="p20b" begin="1" period="3" impatience="0.8">
+      <personFlow id="p20b" begin="1" period="6" impatience="0.8">
          <walk from="-E20" to="E20"/>
       </personFlow>
-      <personFlow id="p21a" begin="1" period="3" impatience="0.21">
+      <personFlow id="p21a" begin="1" period="6" impatience="0.21">
          <walk from="E21" to="-E21"/>
       </personFlow>
-      <personFlow id="p21b" begin="1" period="3" impatience="0.79">
+      <personFlow id="p21b" begin="1" period="6" impatience="0.79">
          <walk from="-E21" to="E21"/>
       </personFlow>
-      <personFlow id="p22a" begin="1" period="3" impatience="0.22">
+      <personFlow id="p22a" begin="1" period="6" impatience="0.22">
          <walk from="E22" to="-E22"/>
       </personFlow>
-      <personFlow id="p22b" begin="1" period="3" impatience="0.78">
+      <personFlow id="p22b" begin="1" period="6" impatience="0.78">
          <walk from="-E22" to="E22"/>
       </personFlow>
-      <personFlow id="p23a" begin="1" period="3" impatience="0.23">
+      <personFlow id="p23a" begin="1" period="6" impatience="0.23">
          <walk from="E23" to="-E23"/>
       </personFlow>
-      <personFlow id="p23b" begin="1" period="3" impatience="0.77">
+      <personFlow id="p23b" begin="1" period="6" impatience="0.77">
          <walk from="-E23" to="E23"/>
       </personFlow>
-      <personFlow id="p24a" begin="1" period="3" impatience="0.24">
+      <personFlow id="p24a" begin="1" period="6" impatience="0.24">
          <walk from="E24" to="-E24"/>
       </personFlow>
-      <personFlow id="p24b" begin="1" period="3" impatience="0.76">
+      <personFlow id="p24b" begin="1" period="6" impatience="0.76">
          <walk from="-E24" to="E24"/>
       </personFlow>
-      <personFlow id="p25a" begin="1" period="3" impatience="0.25">
+      <personFlow id="p25a" begin="1" period="6" impatience="0.25">
          <walk from="E25" to="-E25"/>
       </personFlow>
-      <personFlow id="p25b" begin="1" period="3" impatience="0.75">
+      <personFlow id="p25b" begin="1" period="6" impatience="0.75">
          <walk from="-E25" to="E25"/>
       </personFlow>
-      <personFlow id="p26a" begin="1" period="3" impatience="0.26">
+      <personFlow id="p26a" begin="1" period="6" impatience="0.26">
          <walk from="E26" to="-E26"/>
       </personFlow>
-      <personFlow id="p26b" begin="1" period="3" impatience="0.74">
+      <personFlow id="p26b" begin="1" period="6" impatience="0.74">
          <walk from="-E26" to="E26"/>
       </personFlow>
-      <personFlow id="p27a" begin="1" period="3" impatience="0.27">
+      <personFlow id="p27a" begin="1" period="6" impatience="0.27">
          <walk from="E27" to="-E27"/>
       </personFlow>
-      <personFlow id="p27b" begin="1" period="3" impatience="0.73">
+      <personFlow id="p27b" begin="1" period="6" impatience="0.73">
          <walk from="-E27" to="E27"/>
       </personFlow>
-      <personFlow id="p28a" begin="1" period="3" impatience="0.28">
+      <personFlow id="p28a" begin="1" period="6" impatience="0.28">
          <walk from="E28" to="-E28"/>
       </personFlow>
-      <personFlow id="p28b" begin="1" period="3" impatience="0.72">
+      <personFlow id="p28b" begin="1" period="6" impatience="0.72">
          <walk from="-E28" to="E28"/>
       </personFlow>
-      <personFlow id="p29a" begin="1" period="3" impatience="0.29">
+      <personFlow id="p29a" begin="1" period="6" impatience="0.29">
          <walk from="E29" to="-E29"/>
       </personFlow>
-      <personFlow id="p29b" begin="1" period="3" impatience="0.71">
+      <personFlow id="p29b" begin="1" period="6" impatience="0.71">
          <walk from="-E29" to="E29"/>
       </personFlow>
-      <personFlow id="p30a" begin="1" period="3" impatience="0.3">
+      <personFlow id="p30a" begin="1" period="6" impatience="0.3">
          <walk from="E30" to="-E30"/>
       </personFlow>
-      <personFlow id="p30b" begin="1" period="3" impatience="0.7">
+      <personFlow id="p30b" begin="1" period="6" impatience="0.7">
          <walk from="-E30" to="E30"/>
       </personFlow>
-      <personFlow id="p31a" begin="1" period="3" impatience="0.31">
+      <personFlow id="p31a" begin="1" period="6" impatience="0.31">
          <walk from="E31" to="-E31"/>
       </personFlow>
-      <personFlow id="p31b" begin="1" period="3" impatience="0.69">
+      <personFlow id="p31b" begin="1" period="6" impatience="0.69">
          <walk from="-E31" to="E31"/>
       </personFlow>
-      <personFlow id="p32a" begin="1" period="3" impatience="0.32">
+      <personFlow id="p32a" begin="1" period="6" impatience="0.32">
          <walk from="E32" to="-E32"/>
       </personFlow>
-      <personFlow id="p32b" begin="1" period="3" impatience="0.68">
+      <personFlow id="p32b" begin="1" period="6" impatience="0.68">
          <walk from="-E32" to="E32"/>
       </personFlow>
-      <personFlow id="p33a" begin="1" period="3" impatience="0.33">
+      <personFlow id="p33a" begin="1" period="6" impatience="0.33">
          <walk from="E33" to="-E33"/>
       </personFlow>
-      <personFlow id="p33b" begin="1" period="3" impatience="0.67">
+      <personFlow id="p33b" begin="1" period="6" impatience="0.67">
          <walk from="-E33" to="E33"/>
       </personFlow>
-      <personFlow id="p34a" begin="1" period="3" impatience="0.34">
+      <personFlow id="p34a" begin="1" period="6" impatience="0.34">
          <walk from="E34" to="-E34"/>
       </personFlow>
-      <personFlow id="p34b" begin="1" period="3" impatience="0.66">
+      <personFlow id="p34b" begin="1" period="6" impatience="0.66">
          <walk from="-E34" to="E34"/>
       </personFlow>
-      <personFlow id="p35a" begin="1" period="3" impatience="0.35">
+      <personFlow id="p35a" begin="1" period="6" impatience="0.35">
          <walk from="E35" to="-E35"/>
       </personFlow>
-      <personFlow id="p35b" begin="1" period="3" impatience="0.65">
+      <personFlow id="p35b" begin="1" period="6" impatience="0.65">
          <walk from="-E35" to="E35"/>
       </personFlow>
-      <personFlow id="p36a" begin="1" period="3" impatience="0.36">
+      <personFlow id="p36a" begin="1" period="6" impatience="0.36">
          <walk from="E36" to="-E36"/>
       </personFlow>
-      <personFlow id="p36b" begin="1" period="3" impatience="0.64">
+      <personFlow id="p36b" begin="1" period="6" impatience="0.64">
          <walk from="-E36" to="E36"/>
       </personFlow>
-      <personFlow id="p37a" begin="1" period="3" impatience="0.37">
+      <personFlow id="p37a" begin="1" period="6" impatience="0.37">
          <walk from="E37" to="-E37"/>
       </personFlow>
-      <personFlow id="p37b" begin="1" period="3" impatience="0.63">
+      <personFlow id="p37b" begin="1" period="6" impatience="0.63">
          <walk from="-E37" to="E37"/>
       </personFlow>
-      <personFlow id="p38a" begin="1" period="3" impatience="0.38">
+      <personFlow id="p38a" begin="1" period="6" impatience="0.38">
          <walk from="E38" to="-E38"/>
       </personFlow>
-      <personFlow id="p38b" begin="1" period="3" impatience="0.62">
+      <personFlow id="p38b" begin="1" period="6" impatience="0.62">
          <walk from="-E38" to="E38"/>
       </personFlow>
-      <personFlow id="p39a" begin="1" period="3" impatience="0.39">
+      <personFlow id="p39a" begin="1" period="6" impatience="0.39">
          <walk from="E39" to="-E39"/>
       </personFlow>
-      <!--personFlow id="p39b" begin="1" period="3" impatience="0.61">
+      <!--personFlow id="p39b" begin="1" period="6" impatience="0.61">
          <walk from="-E39" to="E39"/>
       </personFlow-->
-      <!--personFlow id="p40a" begin="1" period="3" impatience="0.4">
+      <!--personFlow id="p40a" begin="1" period="6" impatience="0.4">
          <walk from="E40" to="-E40"/>
       </personFlow>
-      <personFlow id="p40b" begin="1" period="3" impatience="0.6">
+      <personFlow id="p40b" begin="1" period="6" impatience="0.6">
          <walk from="-E40" to="E40"/>
       </personFlow-->
-      <personFlow id="p41a" begin="1" period="3" impatience="0.41">
+      <personFlow id="p41a" begin="1" period="6" impatience="0.41">
          <walk from="E41" to="-E41"/>
       </personFlow>
-      <personFlow id="p41b" begin="1" period="3" impatience="0.59">
+      <personFlow id="p41b" begin="1" period="6" impatience="0.59">
          <walk from="-E41" to="E41"/>
       </personFlow>
-      <personFlow id="p42a" begin="1" period="3" impatience="0.42">
+      <personFlow id="p42a" begin="1" period="6" impatience="0.42">
          <walk from="E42" to="-E42"/>
       </personFlow>
-      <personFlow id="p42b" begin="1" period="3" impatience="0.58">
+      <personFlow id="p42b" begin="1" period="6" impatience="0.58">
          <walk from="-E42" to="E42"/>
       </personFlow>
-      <personFlow id="p43a" begin="1" period="3" impatience="0.43">
+      <personFlow id="p43a" begin="1" period="6" impatience="0.43">
          <walk from="E43" to="-E43"/>
       </personFlow>
-      <personFlow id="p43b" begin="1" period="3" impatience="0.57">
+      <personFlow id="p43b" begin="1" period="6" impatience="0.57">
          <walk from="-E43" to="E43"/>
       </personFlow>
-      <personFlow id="p44a" begin="1" period="3" impatience="0.44">
+      <personFlow id="p44a" begin="1" period="6" impatience="0.44">
          <walk from="E44" to="-E44"/>
       </personFlow>
-      <personFlow id="p44b" begin="1" period="3" impatience="0.56">
+      <personFlow id="p44b" begin="1" period="6" impatience="0.56">
          <walk from="-E44" to="E44"/>
       </personFlow>
-      <personFlow id="p45a" begin="1" period="3" impatience="0.45">
+      <personFlow id="p45a" begin="1" period="6" impatience="0.45">
          <walk from="E45" to="-E45"/>
       </personFlow>
-      <personFlow id="p45b" begin="1" period="3" impatience="0.55">
+      <personFlow id="p45b" begin="1" period="6" impatience="0.55">
          <walk from="-E45" to="E45"/>
       </personFlow>
-      <personFlow id="p46a" begin="1" period="3" impatience="0.46">
+      <personFlow id="p46a" begin="1" period="6" impatience="0.46">
          <walk from="E46" to="-E46"/>
       </personFlow>
-      <personFlow id="p46b" begin="1" period="3" impatience="0.54">
+      <personFlow id="p46b" begin="1" period="6" impatience="0.54">
          <walk from="-E46" to="E46"/>
       </personFlow>
-      <personFlow id="p47a" begin="1" period="3" impatience="0.47">
+      <personFlow id="p47a" begin="1" period="6" impatience="0.47">
          <walk from="E47" to="-E47"/>
       </personFlow>
-      <personFlow id="p47b" begin="1" period="3" impatience="0.53">
+      <personFlow id="p47b" begin="1" period="6" impatience="0.53">
          <walk from="-E47" to="E47"/>
       </personFlow>
-      <personFlow id="p48a" begin="1" period="3" impatience="0.48">
+      <personFlow id="p48a" begin="1" period="6" impatience="0.48">
          <walk from="E48" to="-E48"/>
       </personFlow>
-      <personFlow id="p48b" begin="1" period="3" impatience="0.52">
+      <personFlow id="p48b" begin="1" period="6" impatience="0.52">
          <walk from="-E48" to="E48"/>
       </personFlow>
-      <personFlow id="p49a" begin="1" period="3" impatience="0.49">
+      <personFlow id="p49a" begin="1" period="6" impatience="0.49">
          <walk from="E49" to="-E49"/>
       </personFlow>
-      <personFlow id="p49b" begin="1" period="3" impatience="0.51">
+      <personFlow id="p49b" begin="1" period="6" impatience="0.51">
          <walk from="-E49" to="E49"/>
       </personFlow>
-      <personFlow id="p50a" begin="1" period="3" impatience="0.5">
+      <personFlow id="p50a" begin="1" period="6" impatience="0.5">
          <walk from="E50" to="-E50"/>
       </personFlow>
-      <personFlow id="p50b" begin="1" period="3" impatience="0.5">
+      <personFlow id="p50b" begin="1" period="6" impatience="0.5">
          <walk from="-E50" to="E50"/>
       </personFlow>
-      <personFlow id="p51a" begin="1" period="3" impatience="0.51">
+      <personFlow id="p51a" begin="1" period="6" impatience="0.51">
          <walk from="E51" to="-E51"/>
       </personFlow>
-      <personFlow id="p51b" begin="1" period="3" impatience="0.49">
+      <personFlow id="p51b" begin="1" period="6" impatience="0.49">
          <walk from="-E51" to="E51"/>
       </personFlow>
-      <personFlow id="p52a" begin="1" period="3" impatience="0.52">
+      <personFlow id="p52a" begin="1" period="6" impatience="0.52">
          <walk from="E52" to="-E52"/>
       </personFlow>
-      <personFlow id="p52b" begin="1" period="3" impatience="0.48">
+      <personFlow id="p52b" begin="1" period="6" impatience="0.48">
          <walk from="-E52" to="E52"/>
       </personFlow>
-      <personFlow id="p53a" begin="1" period="3" impatience="0.53">
+      <!--personFlow id="p53a" begin="1" period="6" impatience="0.53">
          <walk from="E53" to="-E53"/>
       </personFlow>
-      <!--personFlow id="p53b" begin="1" period="3" impatience="0.47">
+      <personFlow id="p53b" begin="1" period="6" impatience="0.47">
          <walk from="-E53" to="E53"/>
       </personFlow>
-      <personFlow id="p54a" begin="1" period="3" impatience="0.54">
+      <personFlow id="p54a" begin="1" period="6" impatience="0.54">
          <walk from="E54" to="-E54"/>
       </personFlow>
-      <personFlow id="p54b" begin="1" period="3" impatience="0.46">
+      <personFlow id="p54b" begin="1" period="6" impatience="0.46">
          <walk from="-E54" to="E54"/>
-      </personFlow-->
-      <personFlow id="p55a" begin="1" period="3" impatience="0.55">
-         <walk from="E55" to="-E55"/>
       </personFlow>
-      <personFlow id="p55b" begin="1" period="3" impatience="0.45">
+      <personFlow id="p55a" begin="1" period="6" impatience="0.55">
+         <walk from="E55" to="-E55"/>
+      </personFlow-->
+      <personFlow id="p55b" begin="1" period="6" impatience="0.45">
          <walk from="-E55" to="E55"/>
       </personFlow>
-      <personFlow id="p56a" begin="1" period="3" impatience="0.56">
+      <personFlow id="p56a" begin="1" period="6" impatience="0.56">
          <walk from="E56" to="-E56"/>
       </personFlow>
-      <personFlow id="p56b" begin="1" period="3" impatience="0.44">
+      <personFlow id="p56b" begin="1" period="6" impatience="0.44">
          <walk from="-E56" to="E56"/>
       </personFlow>
-      <personFlow id="p57a" begin="1" period="3" impatience="0.57">
+      <personFlow id="p57a" begin="1" period="6" impatience="0.57">
          <walk from="E57" to="-E57"/>
       </personFlow>
-      <personFlow id="p57b" begin="1" period="3" impatience="0.43">
+      <personFlow id="p57b" begin="1" period="6" impatience="0.43">
          <walk from="-E57" to="E57"/>
       </personFlow>
-      <personFlow id="p58a" begin="1" period="3" impatience="0.58">
+      <personFlow id="p58a" begin="1" period="6" impatience="0.58">
          <walk from="E58" to="-E58"/>
       </personFlow>
-      <personFlow id="p58b" begin="1" period="3" impatience="0.42">
+      <personFlow id="p58b" begin="1" period="6" impatience="0.42">
          <walk from="-E58" to="E58"/>
       </personFlow>
-      <personFlow id="p59a" begin="1" period="3" impatience="0.59">
+      <personFlow id="p59a" begin="1" period="6" impatience="0.59">
          <walk from="E59" to="-E59"/>
       </personFlow>
-      <personFlow id="p59b" begin="1" period="3" impatience="0.41">
+      <personFlow id="p59b" begin="1" period="6" impatience="0.41">
          <walk from="-E59" to="E59"/>
       </personFlow>
-      <personFlow id="p60a" begin="1" period="3" impatience="0.6">
+      <personFlow id="p60a" begin="1" period="6" impatience="0.6">
          <walk from="E60" to="-E60"/>
       </personFlow>
-      <personFlow id="p60b" begin="1" period="3" impatience="0.4">
+      <personFlow id="p60b" begin="1" period="6" impatience="0.4">
          <walk from="-E60" to="E60"/>
       </personFlow>
-      <personFlow id="p61a" begin="1" period="3" impatience="0.61">
+      <personFlow id="p61a" begin="1" period="6" impatience="0.61">
          <walk from="E61" to="-E61"/>
       </personFlow>
-      <personFlow id="p61b" begin="1" period="3" impatience="0.39">
+      <personFlow id="p61b" begin="1" period="6" impatience="0.39">
          <walk from="-E61" to="E61"/>
       </personFlow>
-      <personFlow id="p62a" begin="1" period="3" impatience="0.62">
+      <personFlow id="p62a" begin="1" period="6" impatience="0.62">
          <walk from="E62" to="-E62"/>
       </personFlow>
-      <personFlow id="p62b" begin="1" period="3" impatience="0.38">
+      <personFlow id="p62b" begin="1" period="6" impatience="0.38">
          <walk from="-E62" to="E62"/>
       </personFlow>
-      <personFlow id="p63a" begin="1" period="3" impatience="0.63">
+      <personFlow id="p63a" begin="1" period="6" impatience="0.63">
          <walk from="E63" to="-E63"/>
       </personFlow>
-      <personFlow id="p63b" begin="1" period="3" impatience="0.37">
+      <personFlow id="p63b" begin="1" period="6" impatience="0.37">
          <walk from="-E63" to="E63"/>
       </personFlow>
-      <personFlow id="p64a" begin="1" period="3" impatience="0.64">
+      <personFlow id="p64a" begin="1" period="6" impatience="0.64">
          <walk from="E64" to="-E64"/>
       </personFlow>
-      <personFlow id="p64b" begin="1" period="3" impatience="0.36">
+      <personFlow id="p64b" begin="1" period="6" impatience="0.36">
          <walk from="-E64" to="E64"/>
       </personFlow>
-      <personFlow id="p65a" begin="1" period="3" impatience="0.65">
+      <personFlow id="p65a" begin="1" period="6" impatience="0.65">
          <walk from="E65" to="-E65"/>
       </personFlow>
-      <personFlow id="p65b" begin="1" period="3" impatience="0.35">
+      <personFlow id="p65b" begin="1" period="6" impatience="0.35">
          <walk from="-E65" to="E65"/>
       </personFlow>
-      <personFlow id="p66a" begin="1" period="3" impatience="0.66">
+      <personFlow id="p66a" begin="1" period="6" impatience="0.66">
          <walk from="E66" to="-E66"/>
       </personFlow>
-      <personFlow id="p66b" begin="1" period="3" impatience="0.34">
+      <personFlow id="p66b" begin="1" period="6" impatience="0.34">
          <walk from="-E66" to="E66"/>
       </personFlow>
-      <personFlow id="p67a" begin="1" period="3" impatience="0.67">
+      <personFlow id="p67a" begin="1" period="6" impatience="0.67">
          <walk from="E67" to="-E67"/>
       </personFlow>
-      <personFlow id="p67b" begin="1" period="3" impatience="0.33">
+      <personFlow id="p67b" begin="1" period="6" impatience="0.33">
          <walk from="-E67" to="E67"/>
       </personFlow>
-      <personFlow id="p68a" begin="1" period="3" impatience="0.68">
+      <personFlow id="p68a" begin="1" period="6" impatience="0.68">
          <walk from="E68" to="-E68"/>
       </personFlow>
-      <personFlow id="p68b" begin="1" period="3" impatience="0.32">
+      <personFlow id="p68b" begin="1" period="6" impatience="0.32">
          <walk from="-E68" to="E68"/>
       </personFlow>
-      <personFlow id="p69a" begin="1" period="3" impatience="0.69">
+      <personFlow id="p69a" begin="1" period="6" impatience="0.69">
          <walk from="E69" to="-E69"/>
       </personFlow>
-      <personFlow id="p69b" begin="1" period="3" impatience="0.31">
+      <personFlow id="p69b" begin="1" period="6" impatience="0.31">
          <walk from="-E69" to="E69"/>
       </personFlow>
-      <personFlow id="p70a" begin="1" period="3" impatience="0.7">
+      <personFlow id="p70a" begin="1" period="6" impatience="0.7">
          <walk from="E70" to="-E70"/>
       </personFlow>
-      <personFlow id="p70b" begin="1" period="3" impatience="0.3">
+      <personFlow id="p70b" begin="1" period="6" impatience="0.3">
          <walk from="-E70" to="E70"/>
       </personFlow>
-      <personFlow id="p71a" begin="1" period="3" impatience="0.71">
+      <personFlow id="p71a" begin="1" period="6" impatience="0.71">
          <walk from="E71" to="-E71"/>
       </personFlow>
-      <personFlow id="p71b" begin="1" period="3" impatience="0.29">
+      <personFlow id="p71b" begin="1" period="6" impatience="0.29">
          <walk from="-E71" to="E71"/>
       </personFlow>
 `    
@@ -455,7 +455,7 @@
 	
 	<!--vehicle id="carA" depart="0.00" length="5" width="2" accel="3" decel="5" departLane="free" color="orange">
         <route id="route_0" edges="gneE18 gneE25 gneE26 gneE27 gneE28 -gneE38 -gneE35 -gneE34 -gneE33 -gneE32"/>
-		<flow id="flow0" type="car" route="route_0" begin="0" period="3" number="195"/>
+		<flow id="flow0" type="car" route="route_0" begin="0" period="6" number="195"/>
     </vehicle-->
 	
 	<!--vehicle id="carB" depart="0.00" length="3.5" width="1.9" accel="4" decel="5" departLane="free" color="yellow">
