@@ -1,14 +1,26 @@
 //package src;
 
-import org.w3c.dom.*;
-import org.xml.sax.SAXException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.*;
-import javax.xml.transform.stream.*;
-import javax.xml.parsers.*;
-import java.io.*;
-import java.text.DecimalFormat;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 
 class XMLGeneration {
     public static DecimalFormat df = new DecimalFormat("0.00");
@@ -59,7 +71,10 @@ class XMLGeneration {
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
                     String id = element.getAttribute("id");
-                    if (id.charAt(0) == 'E' && id.charAt(1) != '0') {
+                    double ran = Math.random();
+                    if (id.charAt(0) == 'E' && id.charAt(1) != '0'
+                    		&& ran <= 0.4
+                    		) {
                         float x = Float.parseFloat(id.substring(1));
                         Node personFlow1 = CreatePersonFlow(newDoc, x, "a", M, i % 40);
                         Node personFlow2 = CreatePersonFlow(newDoc, x, "b", M, i % 40);
@@ -102,7 +117,8 @@ class XMLGeneration {
         String id = "p" + Integer.toString((int) x) + tail;
         personFlow.setAttribute("id", id);
         personFlow.setAttribute("begin", "" + count);
-        personFlow.setAttribute("period", "" + (5 + (begin % 6)));
+        int beginRandom = (int) Math.floor(6*CustomerRandom.GetProbality());
+        personFlow.setAttribute("period", "" + (5 + beginRandom));
         //personFlow.setAttribute("id", id);
 
         double pXa = (x < (M / 2 + 1)) ? (x * 1.0 / (M / 2 + 1)) : (x * 1.0 / M);
