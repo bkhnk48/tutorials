@@ -1,7 +1,7 @@
 <routes>
   <vType id="agv" type="e-scooter" length="1.1" width="0.4" accel="10" decel="10" sigma="0"/>
   <route id="route_0" edges="E0 E1 E2 E3 E4 E5 -E167 -E166 -E165 -E164 -E163 -E162 -E161 -E160 -E159 -E158 -E157 -E156 -E155 -E154 -E153 E95 E96 E97 E98 E99 E100 E101 E102 E103 E104 E105 E106 E107 E108 E109 -E215 -E214 -E213 -E212 -E211 -E210 -E209 -E208 -E207 -E206 -E205 -E204 -E203 -E202 E83 E84 E85 E86 E90 E91 E92"/>
-  <flow id="flow0" type="agv" route="route_0" begin="0" period="3" minGap="1.00" maxSpeed="4.00" number="1115"/>
+  <flow id="flow0" type="agv" route="route_0" begin="0" period="3" minGap="1.00" maxSpeed="4.00" number="35"/>
   <personFlow begin="0" id="p10a" impatience="0.04" period="7">
     <walk from="E10" to="-E10"/>
   </personFlow>
