@@ -38,11 +38,6 @@ void VehicleControlApp::initialize(int stage)
         if(idDebug == 15){
             mobility = TraCIMobilityAccess().get(getParentModule());
             traciVehicle = mobility->getVehicleCommandInterface();
-            ///subscribedServiceId = -1;
-            //currentOfferedServiceId = 7;
-
-            //wsaInterval = 5;
-            //beaconInterval = 1;
         }
     }
     else if (stage == 1) {
@@ -52,7 +47,7 @@ void VehicleControlApp::initialize(int stage)
             cancelEvent(sendBeacon);
         }
         scheduleAt(simTime() + 0.1, sendBeacon);
-        EV<<"Send to RSU. Waiting for response from RSU!";
+        //EV<<"Send to RSU. Waiting for response from RSU!";
     }
 }
 
@@ -87,8 +82,7 @@ void VehicleControlApp::handleSelfMsg(cMessage* msg)
     // it is important to call the DemoBaseApplLayer function for BSM and WSM transmission
     //if(msg == sendBeacon)
     {
-        TraCIDemo11pMessage* carBeacon = new TraCIDemo11pMessage();
-        //generate content of message
+        TraCIDemo11pMessage* carBeacon = new TraCIDemo11pMessage("test", 0);
         carBeacon->setDemoData(Constant::FIRST);
         carBeacon->setSenderAddress(myId);
         BaseFrame1609_4* WSM = new BaseFrame1609_4();
@@ -110,27 +104,37 @@ void VehicleControlApp::handlePositionUpdate(cObject* obj)
 void VehicleControlApp::handleLowerMsg(cMessage* msg)
 {
     BaseFrame1609_4* WSM = check_and_cast<BaseFrame1609_4*>(msg);
-    //extract the message
     cPacket* enc = WSM->getEncapsulatedPacket();
-    
     if(TraCIDemo11pMessage* bc = dynamic_cast<TraCIDemo11pMessage*>(enc)){
-        //generate the expected message
         char *ret = mergeContent(myId);
-        //compare the expected message to the message from RSU
+
         if(strcmp(ret, bc->getDemoData()) == 0){
             if(traciVehicle->getSpeed() <= 5){
-                EV<<"My new speed: 20"<<endl;
-                traciVehicle->setSpeedMode(0x1f);
+                traciVehicle->setSpeedMode(0x06);
                 traciVehicle->setSpeed(20);
             }
-            else{
-                EV<<"Id: "<<myId<<". My curr speed: "<<traciVehicle->getSpeed()<<endl;
+            else if(false){
+                std::string land ("B0toB1_0");
+                std::string new_land("B1toB0_0");
+                std::string sub_new_land("B1toB0_1");
+                if(land.compare(traciVehicle->getLaneId()) == 0
+                        && new_land.compare(traciVehicle->getLaneId()) != 0
+                        && sub_new_land.compare(traciVehicle->getLaneId()) != 0
+                        )
+                {
+                    if(myId == 16)
+                        EV<<"\tprepare to change route of "<<myId<<endl;
+                    willChange = true;
+                    bool change = traciVehicle->changeVehicleRoute({
+                        "B0toB1", "B1toB0", "B0toA0", "A0toA1"
+                    });
+                    if(myId == 16)
+                        EV<<"Could change route? "<<change<<endl;
+                }
             }
         }
     }
     else{
-        /*EV<<"In "<<myId<<". At "<<simTime()
-                <<" no TraCIDemo11Message but from "
-                <<msg->getSenderModuleId()<<endl;*/
+
     }
 }
