@@ -20,14 +20,18 @@
 #include <string.h>
 #include <string>
 #include <stdio.h>
+#include "veins/modules/mobility/traci/TraCIMobility.h"
+//using veins::TraCIMobility;
+using namespace veins;
 
 class Constant {
 public:
     static constexpr const char* FIRST = "First vehicle";
     static constexpr const char* RSU_IDENTIFY = "RSU";
-
+    static constexpr const long WANTED_ID = 52;
     Constant();
     virtual ~Constant();
+    static TraCIMobility* activation;
 };
 
 static char* mergeContent(long Id){

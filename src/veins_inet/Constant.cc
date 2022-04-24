@@ -15,6 +15,8 @@
 
 #include "Constant.h"
 
+TraCIMobility* Constant::activation = NULL;
+
 Constant::Constant() {
     // TODO Auto-generated constructor stub
 
@@ -23,4 +25,5 @@ Constant::Constant() {
 Constant::~Constant() {
     // TODO Auto-generated destructor stub
 }
+
 
