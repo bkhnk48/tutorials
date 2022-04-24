@@ -34,6 +34,7 @@ public:
     void finish() override;
     cMessage* sendBeacon;
 
+
 protected:
     void onBSM(DemoSafetyMessage* bsm) override;
     void onWSM(BaseFrame1609_4* wsm) override;
@@ -41,6 +42,9 @@ protected:
 
     void handleSelfMsg(cMessage* msg) override;
     void handlePositionUpdate(cObject* obj) override;
+
+//private:
+    //Coord getPositionById(int personId);
 };
 }
 #endif /* VEINS_INET_HOSPITALCONTROLAPP_H_ */

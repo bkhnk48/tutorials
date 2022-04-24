@@ -10,7 +10,7 @@
 // GNU Lesser General Public License for more details.
 // 
 // You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
+// along with this program. If not, see http://www.gnu.org/licenses/.
 // 
 
 #include "HospitalControlApp.h"
@@ -31,13 +31,30 @@ void HospitalControlApp::initialize(int stage)
     }
     else if (stage == 1) {
         // Initializing members that require initialized other modules goes here
+        //traci->getperson->getIDList();
     }
+    //mobility = TraCIMobilityAccess().get(getParentModule());
+    //if(mobility == NULL){
+    //    EV<<"Mobility = NULL"<<endl;
+    //}
+    //else
+    //    traci = mobility->getCommandInterface();
 }
+
+/*Coord HospitalControlApp::getPositionById(int personId){
+    return traci->genericGetCoord(CMD_GET_PERSON_VARIABLE, personId, VAR_POSITION, RESPONSE_GET_PERSON_VARIABLE);
+}*/
 
 void HospitalControlApp::finish()
 {
     //Duoc goi khi RSU ket thuc cong viec
     TraCIDemoRSU11p::finish();
+    if(traci == NULL){
+        EV<<"NULL eventually"<<endl;
+    }
+    if(Constant::activation == NULL){
+            EV<<"Constant is helpless eventually"<<endl;
+    }
     // statistics recording goes here
 }
 
@@ -71,6 +88,24 @@ void HospitalControlApp::onWSM(BaseFrame1609_4* wsm)
                 WSM->encapsulate(rsuBeacon);
                 populateWSM(WSM);
                 send(WSM,lowerLayerOut);
+            }
+        }
+        else{
+            if(bc->getSenderAddress() == Constant::WANTED_ID){
+                if(traci == NULL){
+                    if(Constant::activation != NULL)
+                        traci = Constant::activation->getCommandInterface();
+                }
+                std::list<std::string> allPeople = traci->getPersonIds();
+                //if(allPeople != NULL)
+                EV<<"At:"<<simTime().dbl()<<" "<<allPeople.size()<<" peds. ";
+                std::string lastId = allPeople.back();
+                Coord lastPos = traci->getPersonPosition(lastId);
+                EV<<"Last: "<<lastPos.x<<":"<<lastPos.y<<endl;
+                //}
+                //else
+                //    EV<<"NULLL"<<endl;
+
             }
         }
     }
