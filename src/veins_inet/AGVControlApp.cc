@@ -14,6 +14,7 @@
 // 
 
 #include "AGVControlApp.h"
+//#include "HospitalControlApp.h"
 #include "Constant.h"
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
 
@@ -25,10 +26,13 @@ Register_Class(AGVControlApp);
 void AGVControlApp::initialize(int stage)
 {
     TraCIDemo11p::initialize(stage);
+    sentFirstMessage = false;
     if (stage == 0) {
         int idDebug = getId();
         sendBeacon= new cMessage("send Beacon");
-        if(idDebug == 15){
+        if(idDebug == Constant::WANTED_ID
+                || myId == Constant::WANTED_ID
+        ){
             mobility = TraCIMobilityAccess().get(getParentModule());
             traciVehicle = mobility->getVehicleCommandInterface();
         }
@@ -39,15 +43,25 @@ void AGVControlApp::initialize(int stage)
         {
             cancelEvent(sendBeacon);
         }
-        scheduleAt(simTime() + 0.1, sendBeacon);
-        //EV<<"Send to RSU. Waiting for response from RSU!";
+        if(myId == Constant::WANTED_ID)
+        {
+            scheduleAt(simTime() + 0.1, sendBeacon);
+            //EV<<"Initialize AGV at "<<simTime().dbl()<<" ";
+            curPosition = mobility->getPositionAt(simTime());
+        }
+        if(Constant::activation == NULL){
+            Constant::activation = mobility;
+        }
     }
 }
 
 void AGVControlApp::finish()
 {
     TraCIDemo11p::finish();
-    //EV<<"Reach destination over here"<<endl;
+    if(Constant::activation == NULL){
+            EV<<"Constant is helpless eventually"<<endl;
+    }
+    //EV<<"AGV["<<myId<<"] reaches destination over here"<<endl;
     // statistics recording goes here
 }
 
@@ -75,13 +89,31 @@ void AGVControlApp::handleSelfMsg(cMessage* msg)
     // it is important to call the DemoBaseApplLayer function for BSM and WSM transmission
     {
         TraCIDemo11pMessage* carBeacon = new TraCIDemo11pMessage("test", 0);
-        carBeacon->setDemoData(Constant::FIRST);
-        carBeacon->setSenderAddress(myId);
-        BaseFrame1609_4* WSM = new BaseFrame1609_4();
-        WSM->encapsulate(carBeacon);
-        populateWSM(WSM);
-        send(WSM,lowerLayerOut);
-        return;
+        if(!sentFirstMessage){
+            carBeacon->setDemoData(Constant::FIRST);
+            sentFirstMessage = true;
+        }
+        else if(myId == Constant::WANTED_ID){
+           std::string content = std::to_string(simTime().dbl()) + " ";
+           curPosition = mobility->getPositionAt(simTime());
+            //Coord senderPosition = mobility->getCurrentDirection();
+           content = content +
+                        std::to_string(curPosition.x) + ":"
+                        + std::to_string(curPosition.y);
+           content = content + "Lid" + traciVehicle->getLaneId();
+           content = content + "L.P" + std::to_string(traciVehicle->getLanePosition());
+           content = content + "vl:" + std::to_string(traciVehicle->getSpeed())
+                           + "/" + std::to_string(traciVehicle->getAcceleration());
+           content = content + "dis:" + std::to_string(traciVehicle->getDistanceTravelled());
+           //content = content + "aW: " + std::to_string(traciVehicle->getAccumulatedWaitingTime());
+           carBeacon->setDemoData(content.c_str());
+           carBeacon->setSenderAddress(myId);
+           BaseFrame1609_4* WSM = new BaseFrame1609_4();
+           WSM->encapsulate(carBeacon);
+           populateWSM(WSM);
+           send(WSM,lowerLayerOut);
+           return;
+        }
     }
 }
 
@@ -100,7 +132,7 @@ void AGVControlApp::handleLowerMsg(cMessage* msg)
     if(TraCIDemo11pMessage* bc = dynamic_cast<TraCIDemo11pMessage*>(enc)){
         char *ret = mergeContent(myId);
 
-        if(strcmp(ret, bc->getDemoData()) == 0){
+        if(strcmp(ret, bc->getDemoData()) == 0 && myId == 16){
             if(traciVehicle->getSpeed() <= 5){
                 traciVehicle->setSpeedMode(0x06);
                 traciVehicle->setSpeed(20);

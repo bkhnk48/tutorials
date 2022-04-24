@@ -43,7 +43,7 @@ protected:
     void handlePositionUpdate(cObject* obj) override;
     void handleLowerMsg(cMessage* msg) override;
 private:
-    bool sentFistMessage = false;
+    bool sentFirstMessage = false;
 };
 }
 #endif /* VEINS_INET_AGVCONTROLAPP_H_ */
