@@ -5,9 +5,16 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 
-
- 
 #define CAPACITY 50000 // Size of the Hash Table
+#define ZONE_LENGTH = 1.1 //length of a zone
+
+typedef struct Lane{
+    double length;
+    int number;
+    char id[20];//id of lane itself
+    char edge_id[20]; //id of edge container
+    int neighborsIds[3];
+} Lane;
 
 int getIndex(const char* str){
     int offset = 0;
@@ -464,48 +471,3 @@ void print_table(HashTable* table) {
 }
 
  
-/*int main() {
-    HashTable* ht = create_table(CAPACITY);
-    std::string lane1 = "E";
-    std::string lane2 = "-E";
-    int arr[] = {144, 145, 146, 147, 148, 149, 150, 151,
-    174, 175, 176, 177, 178, 179, 
-    376, 377,
-    398, 399, 
-    832, 833, 
-    892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 
-    934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945};
-    bool found= false;
-    for(int i = 0; i < 532; i++){
-        found = false;
-        lane1 = "E" + std::to_string(i) + "_1";
-        lane2 = "-E" + std::to_string(i) + "_1";
-        int y = getIndex(lane1);
-        for(int j = 0; j < 42; j++){
-            if(arr[j] == y){
-                found = true;
-                break;
-            }
-        }
-        if(!found){
-            ht_insert(ht, std::to_string(y), lane1); 
-            y = getIndex(lane2);
-            ht_insert(ht, std::to_string(y), lane2); 
-        }
-    }
-    //ht_insert(ht, "1", "First address");
-    //ht_insert(ht, "2", "Second address");
-    //ht_insert(ht, "Hel", "Third address");
-    //ht_insert(ht, "Cau", "Fourth address");
-    //print_search(ht, "1");
-    //print_search(ht, "2");
-    //print_search(ht, "3");
-    //print_search(ht, "Hel");
-    //print_search(ht, "Cau");  // Collision!
-    //print_table(ht);
-    //ht_delete(ht, "1");
-    //ht_delete(ht, "Cau");
-    //print_table(ht);
-    free_table(ht);
-    return 0;
-}*/
