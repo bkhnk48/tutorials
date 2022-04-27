@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 #include <assert.h>
-#include "HashAPI.cpp"
+#include "UnitTest.cpp"
 #include<ctype.h>
 #include <regex>
 using namespace std;
@@ -109,11 +109,6 @@ void updateLanes(Lane* allLanes, string tp, int *total){
     allLanes[i].length = length;
     strcpy(allLanes[i].id, getId(tp));
     
-    if(i % 2 == 1)
-        assert(allLanes[i].id[0] == '-');
-    else{
-        assert(allLanes[i].id[0] != '-');
-    }
     allLanes[i].neighborsIds[0] = indexesOfNeighbors[0];
     allLanes[i].neighborsIds[1] = indexesOfNeighbors[1];
     allLanes[i].neighborsIds[2] = indexesOfNeighbors[2];
