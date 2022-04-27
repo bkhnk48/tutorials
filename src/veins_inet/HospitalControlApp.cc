@@ -29,8 +29,10 @@ Register_Class(HospitalControlApp);
 void HospitalControlApp::initialize(int stage)
 {
     TraCIDemoRSU11p::initialize(stage);
-    graphGenerator = new Parser();
-    graphGenerator->readFile();
+    if(graphGenerator == NULL){
+        graphGenerator = new Parser();
+        graphGenerator->readFile();
+    }
     if (stage == 0) {
         sendBeacon= new cMessage("send Beacon");
     }
