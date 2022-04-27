@@ -7,11 +7,12 @@
 using namespace std;
 
 #define CAPACITY 50000 // Size of the Hash Table
-#define ZONE_LENGTH = 1.1 //length of a zone
+#define ZONE_LENGTH 1.1 //length of a zone
 
 typedef struct Lane{
     double length;
     int number;//# of zones
+    double *zones;
     char id[20];//id of lane itself
     //char edge_id[20]; //id of edge container
     int neighborsIds[3];
