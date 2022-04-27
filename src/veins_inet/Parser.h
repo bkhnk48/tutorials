@@ -36,6 +36,7 @@ private:
     double getLength(const char *content);
     int getSumFromZeroTo(int N);
     void updateLanes(GLane* allLanes, std::string tp, int *total);
+    void assertAllLanes(int N, GLane *allLanes);
 };
 
 #endif /* VEINS_INET_PARSER_H_ */

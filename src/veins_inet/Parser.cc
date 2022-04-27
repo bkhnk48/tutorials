@@ -277,8 +277,27 @@ void Parser::readFile(){
             updateLanes(allLanes, tp, &total);
         }
         assert(sum == total);
-        //assertAllLanes(N, allLanes);
+        assertAllLanes(N, allLanes);
 
         newfile.close(); //close the file object.
+    }
+}
+
+void Parser::assertAllLanes(int N, GLane *allLanes){
+    for(int i = 0; i < N; i++){
+        assert(allLanes[i].length > 0);
+        size_t size = sizeof(allLanes[i].id) / sizeof(allLanes[i].id[0]);
+        assert(size >= 4);
+        if(i % 2 == 1)
+            assert(allLanes[i].id[0] == '-');
+        else{
+            assert(allLanes[i].id[0] != '-');
+        }
+
+        assert(allLanes[i].number >= 1);
+        for(int j = 0; j < 4; j++){
+            assert(allLanes[i].neighborsIds[j] >= -1
+                        && allLanes[i].neighborsIds[j] < N);
+        }
     }
 }
