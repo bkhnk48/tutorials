@@ -75,6 +75,53 @@ double getLength(const char *content){
     return result;
 }
 
+int getSumFromZeroTo(int N){
+    int sum = 0;
+    for(int i = 0; i < N; i++)
+    {
+        sum += i;
+    }
+    return sum;
+}
+
+Lane *getAllLanes(int N){
+    Lane *allLanes = (Lane *)malloc(N*sizeof(Lane));
+    for(int i = 0; i < N; i++){
+        allLanes[i].length = 0;
+        allLanes[i].number = 0;
+        allLanes[i].neighborsIds[0] = -1;
+        allLanes[i].neighborsIds[1] = -1;
+        allLanes[i].neighborsIds[2] = -1;
+        allLanes[i].numNeighbors = 0;
+        //allLanes[i].id = "";
+    }
+    return allLanes;
+}
+
+void updateLanes(Lane* allLanes, string tp, int *total){
+    int i = getIndex(tp.c_str());
+
+    i = adjust(i);
+    *total += i;
+    double length = getLength(tp.c_str());              
+    assert(length != 0);
+    int *indexesOfNeighbors = getNeighbors(tp);
+    allLanes[i].length = length;
+    strcpy(allLanes[i].id, getId(tp));
+    
+    if(i % 2 == 1)
+        assert(allLanes[i].id[0] == '-');
+    else{
+        assert(allLanes[i].id[0] != '-');
+    }
+    allLanes[i].neighborsIds[0] = indexesOfNeighbors[0];
+    allLanes[i].neighborsIds[1] = indexesOfNeighbors[1];
+    allLanes[i].neighborsIds[2] = indexesOfNeighbors[2];
+    if(indexesOfNeighbors[0] != -1) allLanes[i].numNeighbors++;
+    if(indexesOfNeighbors[1] != -1) allLanes[i].numNeighbors++;
+    if(indexesOfNeighbors[2] != -1) allLanes[i].numNeighbors++;
+}
+
 int readFile(){
     fstream newfile;
     int N;
@@ -84,31 +131,18 @@ int readFile(){
         string tp;
         getline(newfile, tp);
         N = atoi(tp.c_str());
-        
-        int arr[N] = {-1};
-        for(int i = 0; i < N; i++){
-            arr[i] = -1;
-        }
-        
-        int sum = 0;
-        for(int i = 0; i < N; i++)
-        {
-            sum += i;
-        }
+
+        Lane *allLanes = getAllLanes(N);
+
+        int sum = getSumFromZeroTo(N);
         
         int total = 0;
-        int index = 0;
+        
         while(getline(newfile, tp)){ //read data from file object and put it into string.
-            int y = getIndex(tp.c_str());
-            y = adjust(y);
-            total += y;
-            //arr[y] = 1;
-            double length = getLength(tp.c_str());              
-            assert(length != 0);
-            int *indexesOfNeighbors = getNeighbors(tp);
-            cout<<tp<<". Neighbors: "<<indexesOfNeighbors[0]
+            updateLanes(allLanes, tp, &total);
+            /*cout<<tp<<". Neighbors: "<<indexesOfNeighbors[0]
                     <<" "<<indexesOfNeighbors[1]<<" "
-                    <<indexesOfNeighbors[2]<<endl;
+                    <<indexesOfNeighbors[2]<<endl;*/
             
         }
         assert(sum == total);
