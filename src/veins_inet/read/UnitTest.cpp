@@ -17,6 +17,7 @@ void assertAllLanes(int N, Lane *allLanes){
             assert(allLanes[i].id[0] != '-');
         }
         
+        assert(allLanes[i].number >= 1);
         for(int j = 0; j < 4; j++){
             assert(allLanes[i].neighborsIds[j] >= -1 
                         && allLanes[i].neighborsIds[j] < N);
