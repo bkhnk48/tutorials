@@ -38,6 +38,7 @@ int *getNeighbors(std::string content){
     {
         if(count >= 2){
             int x = getIndex(item.c_str());
+            x = adjust(x);
             arr[count - 2] = x;
         }
         count++;
@@ -141,6 +142,7 @@ int readFile(){
             
         }
         assert(sum == total);
+        assertAllLanes(N, allLanes);
         
         newfile.close(); //close the file object.
     }
