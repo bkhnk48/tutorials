@@ -109,6 +109,9 @@ void updateLanes(Lane* allLanes, string tp, int *total){
     int *indexesOfNeighbors = getNeighbors(tp);
     allLanes[i].length = length;
     strcpy(allLanes[i].id, getId(tp));
+    allLanes[i].number = ceil(allLanes[i].length/ZONE_LENGTH);
+
+    allLanes[i].zones = (double *)malloc(allLanes[i].number*sizeof(double));
     
     allLanes[i].neighborsIds[0] = indexesOfNeighbors[0];
     allLanes[i].neighborsIds[1] = indexesOfNeighbors[1];
