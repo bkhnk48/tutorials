@@ -4,17 +4,32 @@
 #include <string>
 #include <stdlib.h>
 #include <bits/stdc++.h>
+using namespace std;
 
 #define CAPACITY 50000 // Size of the Hash Table
 #define ZONE_LENGTH = 1.1 //length of a zone
 
 typedef struct Lane{
     double length;
-    int number;
+    int number;//# of zones
     char id[20];//id of lane itself
     char edge_id[20]; //id of edge container
     int neighborsIds[3];
+    int numNeighbors ;
 } Lane;
+
+const char *getId(string str){
+    string id = "";
+    id = id + str.at(0) + str.at(1);
+    
+    for(int i = 2; i < str.length() - 1; i++){
+        id = id + str.at(i);
+        if(str.at(i + 1) == ' '){
+            break;
+        }
+    }
+    return id.c_str();
+}
 
 int getIndex(const char* str){
     int offset = 0;
