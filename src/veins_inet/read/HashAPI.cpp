@@ -13,7 +13,7 @@ typedef struct Lane{
     double length;
     int number;//# of zones
     char id[20];//id of lane itself
-    char edge_id[20]; //id of edge container
+    //char edge_id[20]; //id of edge container
     int neighborsIds[3];
     int numNeighbors ;
 } Lane;
