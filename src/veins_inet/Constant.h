@@ -29,6 +29,7 @@ public:
     static constexpr const char* FIRST = "First vehicle";
     static constexpr const char* RSU_IDENTIFY = "RSU";
     static constexpr const long WANTED_ID = 52;
+    static constexpr const double ZONE_LENGTH = 1.1;
     Constant();
     virtual ~Constant();
     static TraCIMobility* activation;
