@@ -16,6 +16,9 @@
 #include "HospitalControlApp.h"
 
 #include "Constant.h"
+//#include "HashAPI.cpp"
+//#include "UnitTest.cpp"
+//#include "ReadFile.cpp"
 
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
 
@@ -26,6 +29,8 @@ Register_Class(HospitalControlApp);
 void HospitalControlApp::initialize(int stage)
 {
     TraCIDemoRSU11p::initialize(stage);
+    graphGenerator = new Parser();
+    graphGenerator->readFile();
     if (stage == 0) {
         sendBeacon= new cMessage("send Beacon");
     }
@@ -129,3 +134,18 @@ void HospitalControlApp::handlePositionUpdate(cObject* obj)
     // member variables such as currentPosition and currentSpeed are updated in the parent class
 
 }
+/*std::string HospitalControlApp::getIdOfGLane(std::string str){
+    std::string id = "";
+    id = id + str.at(0) + str.at(1);
+
+    for(int i = 2; i < str.length() - 1; i++){
+        id = id + str.at(i);
+        if(str.at(i + 1) == ' '){
+            break;
+        }
+    }
+    return id;
+}*/
+//int HospitalControlApp::getX2(int x){
+    //return x*x;
+//}

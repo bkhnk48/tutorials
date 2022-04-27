@@ -20,7 +20,7 @@
 #pragma once
 
 #include "veins/veins.h"
-
+#include "Parser.h"
 #include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
 #include "veins/modules/application/traci/TraCIDemoRSU11p.h"
 
@@ -33,7 +33,7 @@ public:
     void initialize(int stage) override;
     void finish() override;
     cMessage* sendBeacon;
-
+    Parser* graphGenerator;
 
 protected:
     void onBSM(DemoSafetyMessage* bsm) override;
@@ -44,7 +44,8 @@ protected:
     void handlePositionUpdate(cObject* obj) override;
 
 //private:
-    //Coord getPositionById(int personId);
+    //virtual std::string getIdOfGLane(std::string str);
+    //virtual int getX2(int x);
 };
 }
 #endif /* VEINS_INET_HOSPITALCONTROLAPP_H_ */
