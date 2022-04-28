@@ -31,7 +31,7 @@ public:
 private:
     GLane *allLanes;
     GLane *initAllLanes(int N);
-    std::vector<std::string> split(const std::string& str, const std::string& delim);
+    //std::vector<std::string> split(const std::string& str, const std::string& delim);
     int *getNeighbors(std::string content);
     double getLength(const char *content);
     int getSumFromZeroTo(int N);

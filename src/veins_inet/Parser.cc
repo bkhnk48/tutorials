@@ -156,22 +156,6 @@ GLane* Parser::initAllLanes(int N){
     return allLanes;
 }
 
-std::vector<std::string> Parser::split(const std::string& str, const std::string& delim)
-{
-    std::vector<std::string> tokens;
-    size_t prev = 0, pos = 0;
-    do
-    {
-        pos = str.find(delim, prev);
-        if (pos == std::string::npos) pos = str.length();
-        std::string token = str.substr(prev, pos-prev);
-        if (!token.empty()) tokens.push_back(token);
-        prev = pos + delim.length();
-    }
-    while (pos < str.length() && prev < str.length());
-    return tokens;
-}
-
 int* Parser::getNeighbors(std::string content){
     std::string regex_str = " ";
     int count = 0;
@@ -258,11 +242,10 @@ void Parser::updateLanes(GLane* allLanes, std::string tp, int *total){
 void Parser::readFile(){
     std::fstream newfile;
     int N;
-    char cwd[256];
 
     newfile.open("input.txt", std::ios::in);
     if (newfile.is_open()){   //checking whether the file is open
-        EV<<"FOUND"<<endl;
+        //EV<<"FOUND"<<endl;
         std::string tp;
         getline(newfile, tp);
         N = atoi(tp.c_str());
